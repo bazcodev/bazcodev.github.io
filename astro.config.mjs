@@ -2,5 +2,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://bazcodev.github.io',
+    site: 'https://www.olivier.software',
 });
