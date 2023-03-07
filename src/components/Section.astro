@@ -1,0 +1,56 @@
+---
+export interface Props {
+    color: string,
+    label: string,
+    title: string,
+    description: string,
+}
+
+const { color, label, title, description } = Astro.props;
+---
+
+<div class:list={['section', color ? `section-${color}` : '']}>
+    <h3 class:list={['section-label', { 'text-gradient': color }, `text-gradient-${color}`]}>{label}</h3>
+    <h4 class="section-title">{title}</h4>
+    <p class="section-description">{description}</p>
+
+    <slot />
+</div>
+
+<style>
+    .text-gradient {
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 200%;
+		background-position: 0%;
+	}
+
+    .text-gradient-sea {
+        background-image: linear-gradient(90deg, theme(colors.sea.400), theme(colors.sea.700));
+    }
+
+    .text-gradient-lime {
+        background-image: linear-gradient(90deg, theme(colors.lime.400), theme(colors.lime.700));
+    }
+
+    .text-gradient-peach {
+        background-image: linear-gradient(90deg, theme(colors.peach.400), theme(colors.peach.700));
+    }
+
+    .section {
+        @apply mx-auto flex flex-col justify-center text-center min-h-screen;
+        max-width: 1040px;
+    }
+
+    .section-label {
+		@apply font-bold text-2xl mb-5;
+	}
+
+	.section-title {
+		@apply font-black text-5xl mb-5;
+	}
+
+    .section-description {
+        @apply font-medium text-2xl mb-28;
+    }
+</style>

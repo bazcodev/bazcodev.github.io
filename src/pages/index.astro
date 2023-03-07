@@ -1,81 +1,163 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Section from '../components/Section.astro';
+import SectionBlock from '../components/SectionBlock.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		
+		<section class="home-hero">
+			<h1>Breng wijken in kaart met begrijpbare data</h1>
+			<h2>
+				Olivier is een platform voor gemeentes en woningcorporaties, die de behoeftes 
+				van de wijk inzichtelijk maakt. Beoordeel aan de hand van data 
+				hoe uw wijken er voor staan, maar vooral wat de bewoners er zelf van vinden. 
+				Vind samen met Oliver de formule om van elke wijk een fantastische wijk te maken.
+			</h2>
+			<div class="flex justify-center">
+				<div class="grid grid-cols-2 gap-4">
+					<div>
+						<a href="#" class="button button-large">
+							<span class="button-content">Ontdek meer</span>
+						</a>
+					</div>
+					<div>
+						<a href="#" class="button button-large">
+							<span class="button-content">Vraag informatie aan</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Section 
+			color="sea" 
+			label="Inzicht" 
+			title="Monitor wijken met de wijkindex" 
+			description="Een wijk is een verzameling van interne en externe factoren die het gevoel en de sfeer in de wijk bepalen. Zoek samen met Olivier naar dé formule om van iedere wijk een fantastische wijk te maken."
+		>
+			<div>
+				<div class="grid grid-cols-2">
+					<div>
+
+					</div>
+					<div>
+						<div class="flex flex-col gap-6">
+							<SectionBlock 
+								color="sea"
+								iconName="eye"
+								title="Focus op wat belangrijk is"
+								content="Met olivier kunt u de focus leggen op wat echt belangrijk is voor uw organisatie. Accentueer velden waaraan u het meeste belang hecht."
+							/>
+
+							<SectionBlock 
+								color="sea"
+								iconName="flask"
+								title="Wetenschappelijk onderbouwd"
+								content="De gedachte onder het platform komt van ervaringsdeskundigen, specialisten in het werkveld en wetenschappelijke validatie."
+							/>
+
+							<SectionBlock 
+								color="sea"
+								iconName="circle-bolt"
+								title="Koppel met externe data"
+								content="Olivier kan als stand-alone platform gebruikt worden, maar de data kan ook gekoppeld worden aan de back-office van uw organsiatie."
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="flex justify-center mt-14">
+				<a href="#" class="button button-large button-sea">Binnenkort meer over Wijk Index</a>
+			</div>
+		</Section>
+
+		<Section 
+			color="lime" 
+			label="Projecten" 
+			title="Geef sturing aan leefbaarheid" 
+			description="Manage projecten die de leefbaarheid van buurten of wijken vergroten. Stel projectteams samen en houdt grip op uitgaven. De Projectscan meet het effect van interventies op de mensen die er wonen."
+		>
+			<div>
+				<div>
+
+				</div>
+				<div>
+					<div class="grid grid-cols-2 gap-6">
+						<SectionBlock 
+							color="lime"
+							iconName="coins"
+							title="Kosten en baten inzichtelijk"
+							content="Verantwoordt maatschappelijk budget door het effect inzichtelijk te presenteren met de software van Olivier."
+						/>
+
+						<SectionBlock 
+							color="lime"
+							iconName="chart-line-up"
+							title="Verhoog de waarde van een wijk"
+							content="Interventies worden steeds accurater doordat er meer data komt. Verhoog de wijkwaarde door de juiste middelen op de juiste plek in te zetten."
+						/>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex justify-center mt-14">
+				<a href="#" class="button button-large button-lime">Binnenkort meer over Projecten</a>
+			</div>
+		</Section>
+
+		<Section 
+			color="peach" 
+			label="Feedback" 
+			title="Voldoen aan behoeftes" 
+			description="De behoefte van de wijk moet uit de wijk zelf komen. Door het te vragen ontstaat de reële vraag. Misschien is de behoefte tijdens het proces heel anders dan vooraf gedacht."
+		>
+			<div>
+				<div class="grid grid-cols-2">
+					<div>
+
+					</div>
+					<div>
+						<div class="flex flex-col gap-6">
+							<SectionBlock 
+								color="peach"
+								iconName="comments-question-check"
+								title="Communicatie met bewoners"
+								content="Olivier is een laagdrempelige manier om met bewoners in contact te komen. Hierdoor ontstaat een sterkere vertrouwensband."
+							/>
+
+							<SectionBlock 
+								color="peach"
+								iconName="lock"
+								title="Privacy van bewoners waargeborgen"
+								content="De vragen zijn allemaal geannomiseerd. het maakt ook niet uit wie een bepaalde mening heeft. De mening an sich telt."
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex justify-center mt-14">
+				<a href="#" class="button button-large button-peach">Binnenkort meer over Feedback</a>
+			</div>
+		</Section>
+
 	</main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+	.hero {
+
 	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
+
+	.hero-title {
+
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+
+	.hero-description {
+		
 	}
 </style>

@@ -1,0 +1,26 @@
+---
+export interface Props {
+    color: string,
+    title: string,
+    content: string,
+    iconName: string,
+}
+
+const { color, title, content, iconName } = Astro.props;
+---
+
+<div class="text-left">
+    <i class:list={['icon', `text-${color}`, 'far', `fa-comments-${iconName}`]}></i>
+    <h5 class="title">{title}</h5>
+    <p>{content}</p>
+</div>
+
+<style>
+    .icon {
+
+    }
+    
+    .title {
+		@apply text-black font-bold text-2xl;
+	}
+</style>
